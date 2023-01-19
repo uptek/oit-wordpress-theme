@@ -3,7 +3,7 @@
 /**
  * Template Name: Composer
  */
-//  get_header();
+ get_header();
 
  ja_render_flexible_rows();
  get_footer();
