@@ -1,0 +1,58 @@
+.share-with {
+  padding: 36px 0;
+  background: $color-primary;
+
+  p {
+    padding-left: 230px;
+
+    span:not(.buttons-wrapper) {
+      font-family: $font-luloCleanBold;
+      font-size: 34px;
+      margin-right: 34px;
+    }
+  }
+
+  .layout-btn {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}
+
+@media only screen and (max-width:1440px) {
+  .share-with {
+    p {
+      padding-left: 0;
+
+      span:not(.buttons-wrapper) {
+        font-size: 27px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:850px) {
+  .share-with {
+    padding: 15px 0;
+
+    p {
+      padding-left: 0;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+
+      span:not(.buttons-wrapper) {
+        font-size: 22px;
+        margin: 0 0 10px;
+      }
+    }
+
+    .layout-btn {
+      &:not(:last-child) {
+        margin-right: auto;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,231 @@
+@import "variables";
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.site-header {
+  position: fixed;
+  padding: 28px 142px 28px 160px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(63, 61, 60, 0.96);
+  -webkit-transition: 0.2s all ease;
+  transition: 0.2s all ease;
+  z-index: 999;
+
+
+  .header-wrap {
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+  }
+
+  .logo {
+    -webkit-transition: 0.2s all ease;
+    transition: 0.2s all ease;
+    max-width: 100px;
+
+    a {
+      display: inline-block;
+    }
+  }
+
+  .navigation {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: -20px;
+    -webkit-transition: 0.2s all ease;
+    transition: 0.2s all ease;
+
+    .nav-menu-wrap {
+      z-index: 999;
+
+      .menu-toggler {
+        display: none;
+        position: absolute;
+        right: 43px;
+        top: 35px;
+      }
+
+      &.menu-opened {
+        .menu-toggler {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+        }
+      }
+    }
+
+    ul.nav-menu {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      margin-right: 10px;
+
+      li {
+        margin: 0 35px;
+
+        a {
+          color: #fff;
+          font-size: 20px;
+
+          &:hover {
+            color: $color-primary;
+          }
+        }
+      }
+    }
+
+    .menu-toggler {
+      background: $color-primary;
+      border-radius: 50%;
+      height: 50px;
+      width: 50px;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      cursor: pointer;
+      -webkit-transition: 0.2s all ease;
+      transition: 0.2s all ease;
+      outline: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      z-index: 9999;
+
+      display: none;
+
+      svg{
+        fill: $color-white;
+      }
+
+      &:hover {
+        background: $color-secondary;
+        opacity: 1;
+      }
+    }
+  }
+
+  &.header-scroll {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background: rgba(63, 61, 60, 0.96) !important;
+
+
+    .logo {
+      max-width: 80px;
+    }
+
+    .navigation {
+      margin-top: 0;
+    }
+
+  }
+
+}
+
+.site-main>.banner:first-child {
+  margin-top: -176px;
+}
+
+@media only screen and (max-width:1440px) {
+  .site-header {
+    padding: 28px;
+  }
+}
+
+@media only screen and (max-width:1199px) {
+  .site-header {
+    .navigation {
+      margin-top: 0;
+    }
+
+    .logo {
+      max-width: 80px;
+    }
+  }
+}
+
+@media only screen and (max-width:991px) {
+  .site-header {
+    .navigation {
+      ul.nav-menu {
+        li {
+          margin: 0 15px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:767px) {
+  .site-header {
+    .navigation {
+      .nav-menu-wrap {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.95);
+        width: 100%;
+        height: 100%;
+        transition: 0.3s all ease;
+        transform: translateY(-100%);
+        &.menu-opened{
+          transform: translateY(0);
+        }
+      }
+
+      .menu-toggler {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+
+        &:hover {
+          background: $color-primary;
+        }
+
+        &:active {
+          background: $color-secondary;
+        }
+      }
+
+      ul.nav-menu {
+        // display: none;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding: 15px;
+        height: 100%;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+
+        li {
+          margin: 0 15px 15px;
+
+          a {
+            font-size: 31px;
+          }
+        }
+      }
+    }
+  }
+}
