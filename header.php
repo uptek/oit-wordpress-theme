@@ -33,16 +33,17 @@
 				</a>
 			</div>
 			<div class="navigation">
-				<?php
-					if ( has_nav_menu( 'header-menu' ) ) {
-						wp_nav_menu(array(
-							'theme_location'   => 'header-menu',
-							'menu_class'		   => 'nav-menu',
-							'container_class'  => 'nav-menu-wrap',
-							'container_id'     => 'oit-menu-wrap',
-						));
-					}
-				?>
+        <div id="oit-menu-wrap" class="nav-menu-wrap">
+          <?php
+            if ( has_nav_menu( 'header-menu' ) ) {
+              wp_nav_menu(array(
+                'theme_location'   => 'header-menu',
+                'menu_class'		   => 'nav-menu',
+              ));
+            }
+          ?>
+          <?php get_search_form(); ?>
+        </div>
 				<a href="#oit-menu-toggler" id="oit-menu-toggler" class="menu-toggler">
 					<?php get_template_part( 'template-parts/svg/svg', 'bars' ); ?>
 				</a>

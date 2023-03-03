@@ -12,6 +12,12 @@
 
 <section class="no-results not-found">
 	<div class="container text-center">
+    <?php if ( is_search() ) : ?>
+      <p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'one-in-ten' ); ?></p>
+      <?php
+        get_search_form();
+        else:
+      ?>
 		<h1 class="page-title"><?php esc_html_e('No Content Found', 'one-in-ten'); ?></h1>
 
 		<div class="page-content">
@@ -20,5 +26,6 @@
       <a href="<?php echo home_url(); ?>" title="<?php bloginfo( 'name'); ?>" class="layout-btn"><?php _e('Back to Home', 'one-in-ten'); ?></a>
     </div>
 		</div><!-- .page-content -->
+    <?php endif; ?>
 	</div>
 </section><!-- .no-results -->
