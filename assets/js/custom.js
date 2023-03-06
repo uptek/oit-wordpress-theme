@@ -116,6 +116,16 @@ function handleClick(event) {
 }
 mainNav.addEventListener('click', handleClick);
 
+document.addEventListener('click', (event) => {
+  const isClickInside = mainNav.contains(event.target);
+  if (!isClickInside) {
+    const openSubmenus = mainNav.querySelectorAll('.sub-menu.show');
+    openSubmenus.forEach((openSubmenu) => {
+      toggleSubmenu(openSubmenu);
+    });
+  }
+});
+
 
 
 
