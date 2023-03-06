@@ -45,4 +45,38 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   tabbedContent();
 
+  // hide all posts except the first 10
+  var posts = document.querySelectorAll('.founded-post');
+  for (var i = 10; i < posts.length; i++) {
+      posts[i].style.display = 'none';
+  }
+
+  // add click event listener to "Load More" button
+  var loadMoreBtn = document.querySelector('#load-more-results');
+  if(loadMoreBtn){
+    loadMoreBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      // show the next 10 hidden posts
+      var hiddenPosts = [];
+      for (var i = 10; i < posts.length && hiddenPosts.length < 10; i++) {
+        if (posts[i].style.display === 'none') {
+            posts[i].style.display = 'flex';
+            hiddenPosts.push(posts[i]);
+        }
+      }
+
+      // hide the "Load More" button if there are no more posts to show
+      if (hiddenPosts.length === 0) {
+        loadMoreBtn.style.display = 'none';
+      }
+    });
+  }
+
+
+
+
+
 }, false);
+
+

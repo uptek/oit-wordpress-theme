@@ -8,7 +8,7 @@
  */
 
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(['row','align-items-center','py-4']); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(['row','align-items-center','py-4', 'founded-post']); ?>>
   <div class="col-md-3">
     <div class="episode__thumbnail">
       <a href="<?php echo get_permalink( get_the_ID() ); ?>">

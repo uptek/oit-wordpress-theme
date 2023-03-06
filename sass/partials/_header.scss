@@ -131,6 +131,10 @@
             cursor: pointer;
             display: none;
 
+            @media (max-width:767px) {
+              position: static;
+            }
+
             li{
               margin: 10px 0;
               padding: 0 25px;
@@ -162,21 +166,30 @@
                 background-clip: padding-box;
                 cursor: pointer;
                 display: none;
+                @media (max-width:767px) {
+                  position: static;
+                }
               }
             }
+            @media (min-width:768px) {
               &:hover{
                 >.sub-menu{
                   display: block;
                 }
               }
             }
+
+            }
           }
         }
-        &:hover {
-          &.menu-item-has-children > .sub-menu {
-            display: block;
+        @media (min-width:768px) {
+          &:hover {
+            &.menu-item-has-children > .sub-menu {
+              display: block;
+            }
           }
         }
+
 
         a {
           color: #fff;
@@ -326,4 +339,8 @@
       }
     }
   }
+}
+
+.show{
+  display: block !important;
 }

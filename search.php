@@ -46,7 +46,7 @@ $search = new WP_Query();
 $search->posts = array_unique( array_merge( $title_query->posts, $tax_query->posts ), SORT_REGULAR );
 $search->post_count = count( $search->posts );
 ?>
-<section class="episode">
+<section class="episode search-results">
   <div class="container">
 
 		<?php if( $search->have_posts() ) : ?>
@@ -54,19 +54,20 @@ $search->post_count = count( $search->posts );
          <!-- translators: %s: search query.  -->
         <?php printf( esc_html__( 'Search Results for: %s', 'one-in-ten' ), '<span>' . get_search_query() . '</span>' ); ?>
       </h1>
+      <div id="episode-search-results">
       <?php
+        $count = 0;
         while ( $search->have_posts() ) :
           $search->the_post();
           get_template_part( 'template-parts/content', 'search' );
+          $count++;
         endwhile;
     ?>
-    <div class="row">
+      </div>
+    <div class="row align-items-center">
       <div class="col-sm-12">
         <div class="episode__navigation">
-          <?php
-						previous_posts_link( __( 'Newer Posts', 'one-in-ten' ) );
-						next_posts_link( __( 'Older Posts', 'one-in-ten' ) );
-          ?>
+        <button id="load-more-results" class="layout-btn text-center mx-auto">Load More</button>
         </div>
       </div>
     </div>
