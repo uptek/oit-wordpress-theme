@@ -73,6 +73,49 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Get the main nav menu element
+const mainNav = document.querySelector('.nav-menu');
+
+// Add event listeners to menu items with submenus
+const menuItems = mainNav.querySelectorAll('.menu-item-has-children');
+
+menuItems.forEach((menuItem) => {
+  const menuItemLink = menuItem.querySelector('a');
+  const submenu = menuItem.querySelector('.sub-menu');
+
+  // Add event listener to the menu item link
+  menuItemLink.addEventListener('click', (event) => {
+    event.preventDefault();
+    toggleSubmenu(submenu);
+  });
+});
+
+function toggleSubmenu(submenu) {
+  if (submenu) {
+    if (submenu.classList.contains('show')) {
+      submenu.classList.remove('show');
+    } else {
+      // Hide all other submenus before showing this submenu
+      const openSubmenus = mainNav.querySelectorAll('.show');
+      openSubmenus.forEach((openSubmenu) => {
+        if (openSubmenu !== submenu && !openSubmenu.contains(submenu)) {
+          toggleSubmenu(openSubmenu);
+        }
+      });
+      submenu.classList.add('show');
+    }
+  }
+}
+
+function handleClick(event) {
+  const target = event.target;
+  if (target.classList.contains('menu-item-has-children')) {
+    event.preventDefault();
+    toggleSubmenu(target.querySelector('.sub-menu'));
+  }
+}
+mainNav.addEventListener('click', handleClick);
+
 
 
 
