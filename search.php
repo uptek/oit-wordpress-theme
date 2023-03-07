@@ -11,10 +11,64 @@ get_header();
 
 $search_term = $_GET['s'];
 $title_args = array(
-  'post_type' => 'episode',
+  'post_type' => array('post', 'page', 'episode' ),
   'post_status' => 'publish',
   'posts_per_page' => -1,
   's' => $search_term,
+  // 'meta_query' => array(
+  //   'relation' => 'OR',
+  //   array(
+  //     'key' => 'group_content_notes_content',
+  //     'value' => $search_term,
+  //     'compare' => 'LIKE'
+  //   ),
+  //   array(
+  //     'key' => 'group_content_transcript_content',
+  //     'value' => $search_term,
+  //     'compare' => 'LIKE'
+  //   ),
+  //   array(
+  //     'key' => 'blocks_3_description',
+  //     'value' => $search_term,
+  //     'compare' => 'LIKE'
+  //   ),
+  //   array(
+  //     'key' => 'blocks_1_content',
+  //     'value' => $search_term,
+  //     'compare' => 'LIKE'
+  //   ),
+
+  //   array(
+  //     'key' => 'blocks_5_content',
+  //     'value' => $search_term,
+  //     'compare' => 'LIKE'
+  //   ),
+  //   array(
+  //     'key' => 'episode_summary',
+  //     'value' => $search_term,
+  //     'compare' => 'LIKE'
+  //   ),
+  //   array(
+  //     'key' => 'blocks_0_title',
+  //     'value' => $search_term,
+  //     'compare' => 'LIKE'
+  //   ),
+  //   array(
+  //     'key' => 'blocks_0_post_title',
+  //     'value' => $search_term,
+  //     'compare' => 'LIKE'
+  //   ),
+  //   array(
+  //     'key' => 'blocks_0_content',
+  //     'value' => $search_term,
+  //     'compare' => 'LIKE'
+  //   ),
+  //   array(
+  //     'key' => 'blocks_1_title',
+  //     'value' => $search_term,
+  //     'compare' => 'LIKE'
+  //   ),
+  // )
 );
 
 $title_query = new WP_Query($title_args);
@@ -41,15 +95,12 @@ $tax_args = array(
 
 $tax_query = new WP_Query($tax_args);
 
-// Remove duplicates
-$search = new WP_Query();
-$search->posts = array_unique( array_merge( $title_query->posts, $tax_query->posts ), SORT_REGULAR );
-$search->post_count = count( $search->posts );
+$search = array_unique( array_merge( $title_query->posts, $tax_query->posts ), SORT_REGULAR );
 ?>
 <section class="episode search-results">
   <div class="container">
 
-		<?php if( $search->have_posts() ) : ?>
+		<?php if( $search ) : ?>
       <h1 class="latest__block--title search">
          <!-- translators: %s: search query.  -->
         <?php printf( esc_html__( 'Search Results for: %s', 'one-in-ten' ), '<span>' . get_search_query() . '</span>' ); ?>
@@ -57,17 +108,19 @@ $search->post_count = count( $search->posts );
       <div id="episode-search-results">
       <?php
         $count = 0;
-        while ( $search->have_posts() ) :
-          $search->the_post();
-          get_template_part( 'template-parts/content', 'search' );
+
+        foreach($search as $searched_item ){
+          get_template_part( 'template-parts/content', 'search' , [ 'post_id' => $searched_item->ID ] );
           $count++;
-        endwhile;
+        }
+
+        wp_reset_postdata();
     ?>
       </div>
     <div class="row align-items-center">
       <div class="col-sm-12">
         <div class="episode__navigation">
-        <button id="load-more-results" class="layout-btn text-center mx-auto">Load More</button>
+        <button id="load-more-results" class="layout-btn text-center mx-auto"><?php _e('Load More', 'one-in-ten' ); ?></button>
         </div>
       </div>
     </div>

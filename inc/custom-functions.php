@@ -260,9 +260,13 @@ function asset_path($path, $echo = false)
 }
 
 // Custom Excerpt function for Advanced Custom Fields
-function custom_field_excerpt() {
+function custom_field_excerpt( $post_id ) {
 	global $post;
-	$text = get_field('episode_summary');
+  $id = null;
+  if( is_search() ){
+    $id = $post_id;
+  }
+	$text = get_field( 'episode_summary', $id );
 	if ( '' != $text ) {
 		$text = strip_shortcodes( $text );
 		$text = apply_filters('the_content', $text);
