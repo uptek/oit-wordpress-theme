@@ -15,7 +15,7 @@
     </div>
     <div class="episode__content">
       <a href="<?php the_permalink( get_the_ID() ); ?>"><?php the_title( '<h2 class="episode__content--title">', '</h2>' ); ?></a>
-      <div class="episode__content--excerpt"><?php echo custom_field_excerpt(); ?></div>
+      <div class="episode__content--excerpt"><?php echo custom_field_excerpt( get_the_ID() ); ?></div>
       <a href="<?php the_permalink( get_the_ID() ); ?>" class="episode__link"><?php _e( 'Read More', 'one-in-ten' ); ?></a>
     </div>
   </div>

@@ -17,7 +17,7 @@ get_header();
 
           <div class="episode__single--meta pt-2">
             <?php
-            $episode_number = get_field('episode_number');
+            $episode_number = get_field('episode_number', get_the_ID());
             get_template_part('template-parts/meta/episode', 'taxonomy', ['taxonomy' => 'episode-category',  'episode_number' => $episode_number]);
             ?>
           </div>

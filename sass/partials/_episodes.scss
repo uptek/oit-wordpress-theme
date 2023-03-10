@@ -13,6 +13,9 @@
       letter-spacing: -0.21em;
       text-align: center;
       padding-bottom: 20px;
+      &.search{
+        font-size: 25px;
+      }
     }
   }
 
@@ -98,6 +101,9 @@
       padding-top: 3px;
       font-size: 26px;
       font-weight: 700;
+      a{
+        color: inherit;
+      }
 
       &:hover {
         color: lighten($color-secondary, 12);
