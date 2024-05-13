@@ -1,4 +1,4 @@
-<section <?php ja_section_id(); ?> class="layout-<?php echo get_query_var('layout_index'); ?> shine-campaign <?php the_sub_field('section_classes'); ?>">
+<section <?php ja_section_id(); ?> class="layout-<?php echo get_query_var('layout_index'); ?> shine-campaign <?php echo get_sub_field('section_classes'); ?>">
   <div class="shine-campaign-inner container-lg">
     <div class="shine-campaign-thumbnail">
       <div class="shine-campaign-image">

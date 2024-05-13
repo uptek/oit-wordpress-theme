@@ -1,4 +1,4 @@
-<section <?php ja_section_id(); ?> class="layout-<?php echo get_query_var('layout_index'); ?> form <?php the_sub_field('section_classes'); ?>">
+<section <?php ja_section_id(); ?> class="layout-<?php echo get_query_var('layout_index'); ?> form <?php echo get_sub_field('section_classes'); ?>">
   <div class="container">
     <div class="row">
       <div class="col-lg-6">

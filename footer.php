@@ -26,7 +26,7 @@
 					<ul class="social-icons">
 						<?php  while ( have_rows( 'group_footer_social_profiles' , 'option') ) : the_row();?>
 							<li>
-								<a href="<?php the_sub_field( 'url' ); ?>" aria-label="<?php echo get_sub_field('network') . ' link for ' . get_bloginfo('name'); ?>">
+								<a href="<?php echo get_sub_field( 'url' ); ?>" aria-label="<?php echo get_sub_field('network') . ' link for ' . get_bloginfo('name'); ?>">
 								<?php get_template_part( 'template-parts/svg/svg', get_sub_field('network') ); ?>
 								</a>
 							</li>
@@ -62,20 +62,20 @@
 						</span>
 
 						<?php if ( $type == 'map' ) { ?>
-							<a href="<?php the_sub_field( 'map_link' )?>"><?php the_sub_field( 'address' )?></a>
+							<a href="<?php echo get_sub_field( 'map_link' )?>"><?php echo get_sub_field( 'address' )?></a>
 
 						<?php
 							}
 							elseif ( $type == 'phone' ) {
 						?>
-							<a href="tel:<?php the_sub_field( 'phone' )?>"><?php the_sub_field( 'phone' )?></a>
+							<a href="tel:<?php echo get_sub_field( 'phone' )?>"><?php echo get_sub_field( 'phone' )?></a>
 
 						<?php
 							}
 							else {
 								if( $type == 'email' ) {
 						?>
-								<a href="mailto:<?php the_sub_field( 'email' )?>"><?php the_sub_field( 'email' )?></a>
+								<a href="mailto:<?php echo get_sub_field( 'email' )?>"><?php echo get_sub_field( 'email' )?></a>
 						<?php
 							}
 						}

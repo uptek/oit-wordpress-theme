@@ -23,7 +23,7 @@ get_header();
           </div>
 
           <div class="episode__single-content episode-iframe">
-            <?php the_field('embed_code'); ?>
+            <?php echo get_field('embed_code'); ?>
           </div>
 
           <?php if (have_rows('podcast_list')) : ?>
@@ -31,7 +31,7 @@ get_header();
               <p class="tag-title"><?php _e('LISTEN ON', 'one-in-ten'); ?></p>
               <div class="card-icon">
                 <?php while (have_rows('podcast_list')) : the_row(); ?>
-                  <a href="<?php the_sub_field('url'); ?>" target="_blank" class="card-icon--svg">
+                  <a href="<?php echo get_sub_field('url'); ?>" target="_blank" class="card-icon--svg">
                     <?php get_template_part('template-parts/svg/icon', get_sub_field('icon')); ?>
                   </a>
                 <?php endwhile; ?>
@@ -41,7 +41,7 @@ get_header();
 
           <?php if (!empty(get_field('episode_summary'))) : ?>
             <div class="episode__single-summary">
-              <?php the_field('episode_summary'); ?>
+              <?php echo get_field('episode_summary'); ?>
             </div>
           <?php endif; ?>
 
@@ -57,16 +57,16 @@ get_header();
               <div class="tabbed-content">
                 <!--Tabbed navigation-->
                 <ul class="tabs">
-                  <li class="tab-link current" data-tab="notes-tab"><?php the_sub_field('notes_title'); ?></li>
-                  <li class="tab-link" data-tab="transcript-tab"><?php the_sub_field('transcript_title'); ?></li>
+                  <li class="tab-link current" data-tab="notes-tab"><?php echo get_sub_field('notes_title'); ?></li>
+                  <li class="tab-link" data-tab="transcript-tab"><?php echo get_sub_field('transcript_title'); ?></li>
                 </ul>
                 <!--Wrapper to contain interchanging content-->
                 <div class="tabs-wrapper">
                   <div id="notes-tab" class="tab-content current">
-                    <?php !empty(get_sub_field('notes_content')) ?  the_sub_field('notes_content') : _e('No notes found', 'one-in-ten'); ?>
+                    <?php echo !empty( get_sub_field('notes_content') ) ?  get_sub_field('notes_content') : _e('No notes found', 'one-in-ten'); ?>
                   </div>
                   <div id="transcript-tab" class="tab-content">
-                    <?php !empty(get_sub_field('transcript_content')) ?  the_sub_field('transcript_content') : _e('No transcript found', 'one-in-ten'); ?>
+                    <?php echo !empty(get_sub_field('transcript_content')) ?  get_sub_field('transcript_content') : _e('No transcript found', 'one-in-ten'); ?>
                   </div>
                 </div>
               </div>

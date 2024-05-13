@@ -1,5 +1,5 @@
 <?php $header_tag = get_sub_field('header_tag'); ?>
-<section <?php ja_section_id(); ?> class="layout-<?php echo get_query_var('layout_index'); ?> subscribe <?php the_sub_field('section_classes'); ?>">
+<section <?php ja_section_id(); ?> class="layout-<?php echo get_query_var('layout_index'); ?> subscribe <?php echo get_sub_field('section_classes'); ?>">
   <div class="container">
     <div class="subscribe-content">
       <?php
@@ -13,7 +13,7 @@
       ?>
         <div class="subscribe-links">
           <?php while (have_rows('podcast_list')) : the_row();  ?>
-            <a target="_blank" href="<?php the_sub_field('url'); ?>">
+            <a target="_blank" href="<?php echo get_sub_field('url'); ?>">
               <?php get_template_part('template-parts/svg/icon', get_sub_field('icon')); ?>
             </a>
           <?php endwhile; ?>

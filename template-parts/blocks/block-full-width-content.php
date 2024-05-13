@@ -1,4 +1,4 @@
-<section <?php ja_section_id(); ?> class="layout-<?php echo get_query_var( 'layout_index' ); ?> banner <?php the_sub_field('section_classes');?>">
+<section <?php ja_section_id(); ?> class="layout-<?php echo get_query_var( 'layout_index' ); ?> banner <?php echo get_sub_field('section_classes');?>">
  <?php
  $bg_image = get_sub_field( 'background_image');
  ?>
