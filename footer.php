@@ -96,6 +96,14 @@
 			<div class="copyrights">
 				<p>&copy; <?php echo date( 'Y' ); ?> <?php _e( 'National Children\'s Alliance.', 'one-in-ten' ); ?></p>
 			</div>
+      <div class="credits">
+        <p>
+          <?php _e( 'Designed by', 'one-in-ten' ); ?>
+          <a href="https://uptek.com/" target="_blank">
+            <?php _e( 'Uptek', 'one-in-ten' ); ?>
+          </a>
+        </p>
+      </div>
 		</div>
 	</div>
 </footer>
