@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 761 596">
+  <defs>
+    <mask id="hero-mask">
+      <path d="M102 7.5H275V575.5H102V294.5H0Z" fill="#fff"/>
+      <circle cx="462.5" cy="298" r="298" fill="#fff"/>
+      <path d="M273 160.5H352V434.5H273V299.5H220Z" fill="#000"/>
+    </mask>
+  </defs>
+  <rect width="761" height="596" mask="url(#hero-mask)"/>
+</svg>

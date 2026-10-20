@@ -1,0 +1,123 @@
+.hero-content {
+  background-color: $color-primary-light;
+  overflow: hidden;
+
+  .hero-content-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1195px;
+    margin: 0 auto;
+    padding: 200px 15px;
+  }
+
+  .hero-content-text {
+    flex: 0 0 50%;
+    max-width: 600px;
+    padding-right: 30px;
+    color: $color-black;
+
+    .hero-content-title {
+      font-family: $font-luloCleanBold;
+      font-weight: 700;
+      font-size: 70px;
+      line-height: 1;
+      letter-spacing: -0.2em;
+      text-transform: uppercase;
+      color: $color-black;
+      margin-bottom: 40px;
+    }
+
+    p {
+      font-family: $font-nunito;
+      font-size: 20px;
+      line-height: 1.85;
+      color: $color-black;
+    }
+
+    .learn-more-wrap {
+      margin-top: 55px;
+    }
+  }
+
+  .hero-content-media {
+    flex: 1 1 auto;
+    max-width: 760px;
+    // aspect-ratio: 761 / 596;
+    // -webkit-mask-image: url("assets/images/hero-mask.svg");
+    // mask-image: url("assets/images/hero-mask.svg");
+    // -webkit-mask-size: 100% 100%;
+    // mask-size: 100% 100%;
+    // -webkit-mask-repeat: no-repeat;
+    // mask-repeat: no-repeat;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .layout-btn-dark {
+    background: $color-black;
+    border-color: $color-black;
+    color: $color-primary-light;
+    font-weight: 400;
+
+    &:focus,
+    &:hover {
+      background: transparent;
+      color: $color-black;
+    }
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  .hero-content {
+    .hero-content-text {
+      .hero-content-title {
+        font-size: 60px;
+        margin-bottom: 30px;
+      }
+
+      .learn-more-wrap {
+        margin-top: 40px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .hero-content {
+    .hero-content-inner {
+      flex-direction: column;
+      align-items: stretch;
+      // padding: 60px 30px 40px;
+    }
+
+    .hero-content-text {
+      flex-basis: auto;
+      max-width: 100%;
+      padding-right: 0;
+    }
+
+    .hero-content-media {
+      align-self: center;
+      width: 100%;
+      max-width: 560px;
+      margin-top: 50px;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .hero-content {
+    .hero-content-text {
+      .hero-content-title {
+        font-size: 44px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

@@ -7,8 +7,8 @@
     line-height: 1.5;
   }
 
-  div.wpforms-container-full .wpforms-form input[type=email],
-  div.wpforms-container-full .wpforms-form input[type=text],
+  div.wpforms-container-full .wpforms-form input[type="email"],
+  div.wpforms-container-full .wpforms-form input[type="text"],
   div.wpforms-container-full .wpforms-form select {
     font-size: 18px;
     height: 50px;
@@ -23,13 +23,12 @@
     color: $color-secondary;
     border-color: #a5a5a5;
     border-radius: 5px;
-
   }
 
-  div.wpforms-container-full .wpforms-form input[type=submit],
-  div.wpforms-container-full .wpforms-form button[type=submit],
+  div.wpforms-container-full .wpforms-form input[type="submit"],
+  div.wpforms-container-full .wpforms-form button[type="submit"],
   div.wpforms-container-full .wpforms-form .wpforms-page-button {
-    background: #6eb46e;
+    background: $color-primary;
     border-radius: 50px;
     font-size: 18px;
     line-height: 30px;
@@ -38,12 +37,12 @@
     padding: 8px 7px 7px;
     font-weight: 600;
     color: $color-white;
-    border: 2px solid #6eb46e !important;
+    border: 2px solid $color-primary !important;
     -webkit-transition: 0.2s all ease;
     transition: 0.2s all ease;
 
     &:hover {
-      background:transparent;
+      background: transparent;
       color: $color-primary;
       // border: ;
     }
