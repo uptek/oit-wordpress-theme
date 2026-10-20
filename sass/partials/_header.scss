@@ -255,12 +255,11 @@
   }
 
   &.header-scroll {
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-block: 12px;
     background: rgba(1, 185, 176, 0.96) !important;
 
     .logo {
-      max-width: 80px;
+      max-width: 120px;
     }
 
     .navigation {
