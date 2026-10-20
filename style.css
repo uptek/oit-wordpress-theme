@@ -4040,12 +4040,11 @@ template {
   opacity: 1;
 }
 .site-header.header-scroll {
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-block: 12px;
   background: rgba(1, 185, 176, 0.96) !important;
 }
 .site-header.header-scroll .logo {
-  max-width: 80px;
+  max-width: 120px;
 }
 .site-header.header-scroll .navigation {
   margin-top: 0;
@@ -4870,7 +4869,7 @@ a {
   }
 }
 .hero-content {
-  background-color: #01b9b0;
+  background-color: #00b7b0;
   overflow: hidden;
 }
 .hero-content .hero-content-inner {
@@ -4919,7 +4918,7 @@ a {
 .hero-content .layout-btn-dark {
   background: #000000;
   border-color: #000000;
-  color: #01b9b0;
+  color: #00b7b0;
   font-weight: 400;
 }
 .hero-content .layout-btn-dark:focus, .hero-content .layout-btn-dark:hover {
